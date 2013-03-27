@@ -1635,7 +1635,7 @@ window.elFinder = function(node, opts) {
 			self._commands[name].setup(name, self.options.commandsOptions[name]||{});
 		}
 	});
-	
+
 	// prepare node
 	node.addClass(this.cssClass)
 		.bind(mousedown, function() {
@@ -2649,9 +2649,11 @@ elFinder.prototype = {
 	 * @param  String  file mimetype
 	 * @return String
 	 */
-	mime2class : function(mime) {
-		var prefix = 'elfinder-cwd-icon-';
-		
+	mime2class : function(mime,prefix) {
+        if(!prefix){
+            prefix = 'elfinder-cwd-icon-';
+        }
+
 		mime = mime.split('/');
 		
 		return prefix+mime[0]+(mime[0] != 'image' && mime[1] ? ' '+prefix+mime[1].replace(/(\.|\+)/g, '-') : '');
@@ -2842,7 +2844,11 @@ elFinder.prototype = {
 	navId2Hash : function(id) {
 		return typeof(id) == 'string' ? id.substr(4) : false;
 	},
-	
+
+    hasTreeFiles : function() {
+        return !!this.options.showTreeFiles;
+    },
+
 	log : function(m) { window.console && window.console.log && window.console.log(m); return this; },
 	
 	debug : function(type, m) {

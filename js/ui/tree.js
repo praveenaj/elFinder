@@ -175,7 +175,8 @@ $.fn.elfindertree = function(fm, opts) {
 				id          : function(dir) { return fm.navHash2Id(dir.hash) },
 				cssclass    : function(dir) { return (dir.phash ? '' : root)+' '+navdir+' '+fm.perms2class(dir)+' '+(dir.dirs && !dir.link ? collapsed : ''); },
 				permissions : function(dir) { return !dir.read || !dir.write ? ptpl : ''; },
-				symlink     : function(dir) { return dir.alias ? stpl : ''; }
+				symlink     : function(dir) { return dir.alias ? stpl : ''; },
+                cssicon     : function(dir) { return fm.mime2class(dir.mime,'elfinder-tree-icon-'); }
 			},
 			
 			/**
@@ -199,7 +200,13 @@ $.fn.elfindertree = function(fm, opts) {
 			 * @return Array
 			 */
 			filter = function(files) {
-				return $.map(files||[], function(f) { return f.mime == 'directory' ? f : null });
+                if(fm.hasTreeFiles()){
+                    return files||[];
+                }else{
+                    return $.map(files||[], function(f) {
+                        return f.mime == 'directory' ? f : null
+                    });
+                }
 			},
 			
 			/**
@@ -386,9 +393,18 @@ $.fn.elfindertree = function(fm, opts) {
 						file = fm.file(hash);
 				
 					fm.trigger('searchend');
+                    var isDir = link.find('.elfinder-navbar-icon').is('.elfinder-tree-icon-directory');
+                    if(!isDir){
+                        fm.trigger('fileopen', {
+                            file:file
+                        });
+
+                    }
 				
 					if (hash != fm.cwd().hash && !link.is('.'+disabled)) {
+                        if (isDir) {
 						fm.exec('open', file.thash || hash);
+                        }
 					} else if (link.is('.'+collapsed)) {
 						link.children('.'+arrow).click();
 					}

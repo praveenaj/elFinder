@@ -78,7 +78,15 @@ elFinder.prototype._options = {
 	 * @default  {}
 	 */
 	customData : {},
-	
+
+    /**
+     * show non-directory files in tree
+     *
+     * @type Boolean
+     * @default false
+     */
+    showTreeFiles : false,
+
 	/**
 	 * Event listeners to bind on elFinder init
 	 *
