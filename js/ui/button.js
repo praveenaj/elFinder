@@ -8,6 +8,23 @@
 $.fn.elfinderbutton = function(cmd) {
 	return this.each(function() {
 		
+		var btnText, span;	
+		// add text to buttons in addition to icons
+		switch(cmd.name){
+			case 'newsite':
+			btnText = 'New app'
+			break;
+							
+			case 'publish':
+			btnText = 'Publish';
+			break;
+		}
+		if(btnText){
+			span = '<span class="btn-text">' +btnText+ '</span>';
+		} else {
+			span = '';
+		}
+		
 		var c        = 'class',
 			fm       = cmd.fm,
 			disabled = fm.res(c, 'disabled'),
@@ -18,7 +35,7 @@ $.fn.elfinderbutton = function(cmd) {
 			menu,
 			button   = $(this).addClass('ui-state-default elfinder-button')
 				.attr('title', cmd.title)
-				.append('<span class="elfinder-button-icon elfinder-button-icon-'+cmd.name+'"/>')
+				.append('<span class="elfinder-button-icon elfinder-button-icon-'+cmd.name+'"/>' + span)
 				.hover(function(e) { !button.is('.'+disabled) && button[e.type == 'mouseleave' ? 'removeClass' : 'addClass'](hover) /**button.toggleClass(hover);*/ })
 				.click(function(e) { 
 					if (!button.is('.'+disabled)) {
@@ -36,6 +53,24 @@ $.fn.elfinderbutton = function(cmd) {
 			hideMenu = function() {
 				menu.hide();
 			};
+		
+		var btnText;	
+		// add text to buttons in addition to icons
+		switch(cmd.name){
+			case 'newsite':
+			btnText = 'New Site'
+			break;
+							
+			case 'publish':
+			btnText = 'Publish';
+			break;
+		}
+		if(btnText){
+			$('.elfinder-button-icon-'+cmd.name).append('<span class="btn-text">' +btnText+ '</span>');
+		}
+		
+		
+		
 			
 		// if command has variants create menu
 		if ($.isArray(cmd.variants)) {

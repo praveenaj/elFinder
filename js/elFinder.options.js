@@ -111,7 +111,7 @@ elFinder.prototype._options = {
 	commands : [
 		'open', 'reload', 'home', 'up', 'back', 'forward', 'getfile', 'quicklook', 
 		'download', 'rm', 'duplicate', 'rename', 'mkdir', 'mkfile', 'upload', 'copy', 
-		'cut', 'paste', 'edit', 'extract', 'archive', 'search', 'info', 'view', 'help', 'resize', 'sort', 'netmount'
+		'cut', 'paste', 'edit', 'extract', 'archive', 'search', 'info', 'view', 'help', 'resize', 'sort', 'netmount', 'newsite', 'publish', 'editor'
 	],
 	
 	/**
@@ -214,7 +214,7 @@ elFinder.prototype._options = {
 	 * @default ['toolbar', 'tree', 'path', 'stat']
 	 * @full ['toolbar', 'places', 'tree', 'path', 'stat']
 	 */
-	ui : ['toolbar', 'tree', 'path', 'stat'],
+	ui : ['toolbar', 'tree', 'path', 'stat' , 'logo'],
 	
 	/**
 	 * Some UI plugins options.
@@ -458,7 +458,7 @@ elFinder.prototype._options = {
 		// current directory menu
 		cwd    : ['reload', 'back', '|', 'upload', 'mkdir', 'mkfile', 'paste', '|', 'sort', '|', 'info'],
 		// current directory file menu
-		files  : ['getfile', '|','open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info']
+		files  : ['editor', '|', 'getfile', '|','open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info']
 	},
 
 	/**

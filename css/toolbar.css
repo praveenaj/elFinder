@@ -191,6 +191,8 @@
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
 	outline:0px solid;
+	margin-top:6px;
+    margin-bottom:0;
 }
 
 .elfinder-rtl .elfinder-button-search input { direction:rtl; }
@@ -200,7 +202,7 @@
 	position:absolute;
 	height:18px;
 	top: 50%;
-	margin:-9px 4px 0 4px;
+	margin:-5px 4px 0 4px;
 	opacity: .6; 
 	filter:Alpha(Opacity=60);
 }
@@ -213,6 +215,18 @@
 
 
 
+/* search "button" */
+.elfinder .elfinder-button-changeview {
+  background: none repeat scroll 0 0 transparent;
+    float: right;
+    height: auto;
+    margin-right: 6px;
+    min-height: 26px;
+    padding: 9px 0 0 15px;
+    width: 38px;
+}
 
-
+/* ltr/rte enviroment */
+.elfinder-ltr .elfinder-button-search { float:right; margin-right:10px; }
+.elfinder-rtl .elfinder-button-search { float:left; margin-left:10px; }
 

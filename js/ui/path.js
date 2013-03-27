@@ -7,6 +7,7 @@
  * @author Dmitry (dio) Levashov
  **/
 $.fn.elfinderpath = function(fm) {
+	var icon = '<i class="icon-map-marker"></i>&nbsp;';
 	return this.each(function() {
 		var path = $(this).addClass('elfinder-path').html('&nbsp;')
 				.delegate('a', 'click', function(e) {
@@ -24,7 +25,7 @@ $.fn.elfinderpath = function(fm) {
 					dirs.push('<a href="#'+hash+'">'+fm.escape(fm.file(hash).name)+'</a>');
 				});
 
-				path.html(dirs.join(fm.option('separator')));
+				path.html(icon + dirs.join(fm.option('separator')));
 			})
 			.bind('search', function() {
 				path.html(fm.i18n('searcresult'));

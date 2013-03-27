@@ -19,9 +19,10 @@ $.fn.elfindertoolbar = function(fm, opts) {
 				panel = $('<div class="ui-widget-content ui-corner-all elfinder-buttonset"/>');
 				i = panels[l].length;
 				while (i--) {
+					
 					if ((cmd = commands[panels[l][i]])) {
 						button = 'elfinder'+cmd.options.ui;
-						$.fn[button] && panel.prepend($('<div/>')[button](cmd));
+						$.fn[button] && panel.prepend($('<div/>')[button](cmd).addClass('btn-' + panels[l][i]));
 					}
 				}
 				
