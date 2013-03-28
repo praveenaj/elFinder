@@ -208,7 +208,8 @@ window.elFinder = function(node, opts) {
 					&& files[i].mime != 'directory' 
 					&& files[i].phash == cwd
 					&& $.inArray(i, remember) === -1) {
-						delete files[i];
+                        if(!(self.hasTreeFiles()))
+                            delete files[i];
 					}
 				}
 			}
