@@ -1660,7 +1660,7 @@ window.elFinder = function(node, opts) {
 			hide : function() { prevEnabled && self.enable(); }
 		}),
 		// current folder container
-		cwd : $('<div/>').appendTo(node).elfindercwd(this, this.options.uiOptions.cwd || {}),
+		cwd : $('<div/>'),
 		// notification dialog window
 		notify : this.dialog('', {
 			cssClass  : 'elfinder-dialog-notify',
@@ -1671,8 +1671,12 @@ window.elFinder = function(node, opts) {
 			width     : 280
 		}),
 		statusbar : $('<div class="ui-widget-header ui-helper-clearfix ui-corner-bottom elfinder-statusbar"/>').hide().appendTo(node)
-	}
-	
+	};
+
+    if(!this.hasTreeFiles()){
+        this.ui.cwd.appendTo(node).elfindercwd(this, this.options.uiOptions.cwd || {});
+    }
+
 	// load required ui
 	$.each(this.options.ui || [], function(i, ui) {
 		var name = 'elfinder'+ui,
