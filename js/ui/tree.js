@@ -176,7 +176,8 @@ $.fn.elfindertree = function(fm, opts) {
 				cssclass    : function(dir) { return (dir.phash ? '' : root)+' '+navdir+' '+fm.perms2class(dir)+' '+(dir.dirs && !dir.link ? collapsed : ''); },
 				permissions : function(dir) { return !dir.read || !dir.write ? ptpl : ''; },
 				symlink     : function(dir) { return dir.alias ? stpl : ''; },
-                cssicon     : function(dir) { return fm.mime2class(dir.mime,'elfinder-tree-icon-'); }
+                cssicon     : function(dir) { return fm.mime2class(dir.mime,'elfinder-tree-icon-'); },
+                arrow       : function(f) { return f.mime=='directory'?'<span class="elfinder-navbar-arrow"/>':''; }
 			},
 			
 			/**
