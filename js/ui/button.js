@@ -18,12 +18,13 @@ $.fn.elfinderbutton = function(cmd) {
 			case 'publish':
 			btnText = 'Publish';
 			break;
+			
+			case 'addgadget':
+			btnText = 'Add Gadget';
+			break;
 		}
-		if(btnText){
-			span = '<span class="btn-text">' +btnText+ '</span>';
-		} else {
-			span = '';
-		}
+
+		span = btnText ? '<span class="btn-text">' +btnText+ '</span>' : '';
 		
 		var c        = 'class',
 			fm       = cmd.fm,
@@ -53,23 +54,6 @@ $.fn.elfinderbutton = function(cmd) {
 			hideMenu = function() {
 				menu.hide();
 			};
-		
-		var btnText;	
-		// add text to buttons in addition to icons
-		switch(cmd.name){
-			case 'newsite':
-			btnText = 'New Site'
-			break;
-							
-			case 'publish':
-			btnText = 'Publish';
-			break;
-		}
-		if(btnText){
-			$('.elfinder-button-icon-'+cmd.name).append('<span class="btn-text">' +btnText+ '</span>');
-		}
-		
-		
 		
 			
 		// if command has variants create menu

@@ -112,6 +112,7 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'cmdnewsite'   : 'Create new Site',
 			'cmdpublish'   : 'Publish to Store',
 			'cmdeditor'  : 'Open in editor',
+			'cmdaddgadget'  : 'Add Gadget',
 			
 			/*********************************** buttons ***********************************/ 
 			'btnClose'  : 'Close',
