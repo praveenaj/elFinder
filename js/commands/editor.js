@@ -53,8 +53,8 @@ elFinder.prototype.commands.editor = function() {
 	}
 	
 	this.exec = function(hashes) {
-		var sitename  = this.files(hashes)[0].name;
-		window.location = 'dashboard/new-page.jag?site=' + sitename;
+		var file  = this.files(hashes)[0];
+		window.location = 'dashboard/new-page.jag?sitehash=' + file.hash;
 	}
 	
 }

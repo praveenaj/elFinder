@@ -31,7 +31,7 @@ var dirmode = 0755,
 				path.join(src, 'js', 'i18n', 'elfinder.en.js')
 			]
 			.concat(grep(path.join(src, 'js', 'ui'), '\\.js$'))
-			.concat(grep(path.join(src, 'js', 'commands'), '\\.js$')),
+			.concat(grep(path.join(src, 'js', 'commands'), '\\.js$', 'netmount.js')),
 
 		'elfinder.full.css': grep(path.join(src, 'css'), '\\.css$', 'elfinder|theme'),
 
