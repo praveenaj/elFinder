@@ -25,6 +25,7 @@ elFinder.prototype.commands.ul = function() {
 		currentPos.ch = currentPos.ch + 8;
 
 		codeMirrorArr[tab].doc.setCursor(currentPos);
+		codeMirrorArr[tab].focus();
 	}
 
 }
