@@ -6,15 +6,29 @@
  * @author Dmitry (dio) Levashov
  **/
 elFinder.prototype.commands.link = function() {
-	var fm   = this.fm,
-		self = this;
-	
+	var fm = this.fm, self = this;
+
 	this.getstate = function() {
 		return 0;
 	}
-	
-	this.exec = function() {
-	
-	}
 
+	this.exec = function() {
+		
+
+		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
+		
+		var selection = codeMirrorArr[tab].doc.getSelection();
+		
+		var code = '<a href="">' + selection + '</a>';
+		
+		var currentPos = codeMirrorArr[tab].doc.getCursor();
+
+currentPos.ch -= selection.length;
+
+		codeMirrorArr[tab].doc.replaceRange(code, currentPos);
+
+		currentPos.ch = currentPos.ch + 9;
+
+		codeMirrorArr[tab].doc.setCursor(currentPos);
+	}
 }
