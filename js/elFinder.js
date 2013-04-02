@@ -2853,6 +2853,12 @@ elFinder.prototype = {
     hasTreeFiles : function() {
         return !!this.options.showTreeFiles;
     },
+    setRightClicked: function(files) {
+        this.rightClicked = files;
+    },
+    getRightClicked: function() {
+        return this.rightClicked;
+    },
 
 	log : function(m) { window.console && window.console.log && window.console.log(m); return this; },
 	
