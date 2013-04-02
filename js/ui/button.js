@@ -18,10 +18,7 @@ $.fn.elfinderbutton = function(cmd) {
 			case 'publish':
 			btnText = 'Publish';
 			break;
-			
-			case 'addgadget':
-			btnText = 'Add Gadget';
-			break;
+
 		}
 
 		span = btnText ? '<span class="btn-text">' +btnText+ '</span>' : '';

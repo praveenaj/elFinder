@@ -113,6 +113,14 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'cmdpublish'   : 'Publish to Store',
 			'cmdeditor'  : 'Open in editor',
 			'cmdaddgadget'  : 'Add Gadget',
+			'cmdsavefile'  : 'Save File',
+			'cmdbold'		: 'Bold',
+			'cmditalic'		: 'Italic',
+			'cmdimg'		: 'Image',
+			'cmdlink'		: 'Hyperlink',
+			'cmdol'			: 'Ordered List',
+			'cmdul'			: 'Unordered List',
+			'cmdtable'		: 'Table',
 			
 			/*********************************** buttons ***********************************/ 
 			'btnClose'  : 'Close',
