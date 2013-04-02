@@ -13,13 +13,22 @@ elFinder.prototype.commands.italic = function() {
 	}
 
 	this.exec = function() {
-		var code = "<i></i>";
+				var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
 
-		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
+		var selection = codeMirrorArr[tab].doc.getSelection();
+
+		var code = '<i>' + selection + '</i>';
 
 		var currentPos = codeMirrorArr[tab].doc.getCursor();
 
-		codeMirrorArr[tab].doc.replaceRange(code, currentPos);
+		var to = currentPos.ch;
+
+		currentPos.ch -= selection.length;
+
+		codeMirrorArr[tab].doc.replaceRange(code, currentPos, {
+			line : currentPos.line,
+			ch : to
+		});
 
 		currentPos.ch = currentPos.ch + 3;
 
