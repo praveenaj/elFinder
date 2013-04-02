@@ -13,7 +13,7 @@ elFinder.prototype.commands.table = function() {
 	}
 
 	this.exec = function() {
-		var code = '<table>\n\t<tr>\n\t\t<td></td>\n\t</tr>\n</table>';
+		var code = '\n<table>\n\t<tr>\n\t\t<td></td>\n\t</tr>\n</table>';
 
 		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
 
@@ -21,7 +21,8 @@ elFinder.prototype.commands.table = function() {
 
 		codeMirrorArr[tab].doc.replaceRange(code, currentPos);
 
-		currentPos.ch = currentPos.ch + 8;
+		currentPos.ch = 6;
+		currentPos.line += 3;
 
 		codeMirrorArr[tab].doc.setCursor(currentPos);
 		codeMirrorArr[tab].focus();
