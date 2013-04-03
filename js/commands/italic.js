@@ -33,5 +33,6 @@ elFinder.prototype.commands.italic = function() {
 		currentPos.ch = currentPos.ch + 3;
 
 		codeMirrorArr[tab].doc.setCursor(currentPos);
+		codeMirrorArr[tab].focus();
 	}
 }
