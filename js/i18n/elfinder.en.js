@@ -188,6 +188,7 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'perms'           : 'Permissions',
 			'modify'          : 'Modified',
 			'kind'            : 'Kind',
+			'url'			  : 'URL',
 			'read'            : 'read',
 			'write'           : 'write',
 			'noaccess'        : 'no access',
