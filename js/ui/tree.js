@@ -395,11 +395,11 @@ $.fn.elfindertree = function(fm, opts) {
 				
 					fm.trigger('searchend');
                     var isDir = link.find('.elfinder-navbar-icon').is('.elfinder-tree-icon-directory');
+                    $('.'+active).removeClass(active);
                     if(!isDir){
                         fm.trigger('fileopen', {
                             file:file
                         });
-                        $('.'+active).removeClass(active);
                         link.addClass(active);
                     }
 
