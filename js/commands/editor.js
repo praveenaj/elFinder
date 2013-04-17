@@ -16,7 +16,7 @@ elFinder.prototype.commands.editor = function() {
 		var file = this.files(hashes)[0];
 	
 
-		var win = window.open('dashboard/new-page.jag?sitehash=' + file.hash, '_blank');
+		var win = window.open('editor.jag?sitehash=' + file.hash, '_blank');
 		win.focus();
 
 	}
