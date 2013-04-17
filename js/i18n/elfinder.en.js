@@ -121,6 +121,7 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'cmdol'			: 'Ordered List',
 			'cmdul'			: 'Unordered List',
 			'cmdtable'		: 'Table',
+			'cmdpreviewapp'		: 'Preview app in a new window',
 			
 			/*********************************** buttons ***********************************/ 
 			'btnClose'  : 'Close',
@@ -187,6 +188,7 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'perms'           : 'Permissions',
 			'modify'          : 'Modified',
 			'kind'            : 'Kind',
+			'url'			  : 'URL',
 			'read'            : 'read',
 			'write'           : 'write',
 			'noaccess'        : 'no access',
