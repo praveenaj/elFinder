@@ -399,9 +399,10 @@ $.fn.elfindertree = function(fm, opts) {
                         fm.trigger('fileopen', {
                             file:file
                         });
-
+                        $('.'+active).removeClass(active);
+                        link.addClass(active);
                     }
-				
+
 					if (hash != fm.cwd().hash && !link.is('.'+disabled)) {
                         if (isDir) {
 						fm.exec('open', file.thash || hash);
