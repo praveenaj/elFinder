@@ -13,11 +13,15 @@ elFinder.prototype.commands.indent = function () {
         var cm = codeMirrorArr[tab];
         var form = cm.doc.getCursor();
         var to = cm.doc.getCursor("end");
-        cm.autoFormatRange(
-            form, to,
-            {line: 0, ch: 0},
-            {line: cm.lineCount() - 1}
-        );
+
+        if (cm.doc.getSelection().length == 0) {
+            cm.autoFormatRange(
+                {line: 0, ch: 0},
+                {line: cm.lineCount() - 1}
+            );
+        } else {
+            cm.autoFormatRange(form, to);
+        }
         cm.focus();
 
     }
