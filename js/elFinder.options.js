@@ -121,7 +121,7 @@ elFinder.prototype._options = {
 		'download', 'rm', 'duplicate', 'rename', 'mkdir', 'mkfile', 'upload', 'copy', 
 		'cut', 'paste', 'edit', 'extract', 'archive', 'search', 'info', 'view', 'help', 
 		'resize', 'sort', 'netmount', 'newsite', 'publish', 'editor', 'addgadget', 'savefile',
-		'bold', 'italic','link', 'img', 'ol', 'ul', 'table', 'previewapp'
+		'bold', 'italic','link', 'img', 'ol', 'ul', 'table', 'previewapp', 'indent'
 	],
 	
 	/**

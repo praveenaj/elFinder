@@ -121,8 +121,9 @@ if (elFinder && elFinder.prototype && typeof(elFinder.prototype.i18) == 'object'
 			'cmdol'			: 'Ordered List',
 			'cmdul'			: 'Unordered List',
 			'cmdtable'		: 'Table',
-			'cmdpreviewapp'		: 'Preview app in a new window',
-			
+			'cmdpreviewapp' : 'Preview app in a new window',
+            'cmdindent'     : 'Format Selected Code',
+
 			/*********************************** buttons ***********************************/ 
 			'btnClose'  : 'Close',
 			'btnSave'   : 'Save',
