@@ -9,8 +9,7 @@ elFinder.prototype.commands.indent = function () {
     this.exec = function () {
 
 
-        var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
-        var cm = codeMirrorArr[tab];
+        var cm = getCodeMirror();
         var form = cm.doc.getCursor();
         var to = cm.doc.getCursor("end");
 

@@ -5,28 +5,24 @@
  *
  * @author Dmitry (dio) Levashov
  **/
-elFinder.prototype.commands.ol = function() {
-	var fm   = this.fm,
-		self = this;
-	
-	this.getstate = function() {
-		return 0;
-	}
-	
-	this.exec = function() {
-		var code = '\n<ol>\n\t<li></li>\n</ol>';
+elFinder.prototype.commands.ol = function () {
+    var fm = this.fm,
+        self = this;
 
-		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
+    this.getstate = function () {
+        return 0;
+    }
 
-		var currentPos = codeMirrorArr[tab].doc.getCursor();
+    this.exec = function () {
 
-		codeMirrorArr[tab].doc.replaceRange(code, currentPos);
-
-		currentPos.ch = 5;
-		currentPos.line += 2;
-
-		codeMirrorArr[tab].doc.setCursor(currentPos);
-		codeMirrorArr[tab].focus();
-	}
+        var code = '\n<ol>\n\t<li></li>\n</ol>';
+        var cm = getCodeMirror();
+        var currentPos = cm.doc.getCursor();
+        cm.doc.replaceRange(code, currentPos);
+        currentPos.ch = 5;
+        currentPos.line += 2;
+        cm.doc.setCursor(currentPos);
+        cm.focus();
+    }
 
 }

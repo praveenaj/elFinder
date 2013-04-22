@@ -15,18 +15,13 @@ elFinder.prototype.commands.ul = function() {
 	
 	this.exec = function() {
 		var code = '\n<ul>\n\t<li></li>\n</ul>';
-
-		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
-
-		var currentPos = codeMirrorArr[tab].doc.getCursor();
-
-		codeMirrorArr[tab].doc.replaceRange(code, currentPos);
-
+        var cm = getCodeMirror();
+		var currentPos = cm.doc.getCursor();
+		cm.doc.replaceRange(code, currentPos);
 		currentPos.ch = 5;
 		currentPos.line += 2;
-
-		codeMirrorArr[tab].doc.setCursor(currentPos);
-		codeMirrorArr[tab].focus();
+		cm.doc.setCursor(currentPos);
+		cm.focus();
 	}
 
 }

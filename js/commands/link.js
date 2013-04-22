@@ -5,35 +5,27 @@
  *
  * @author Dmitry (dio) Levashov
  **/
-elFinder.prototype.commands.link = function() {
-	var fm = this.fm, self = this;
+elFinder.prototype.commands.link = function () {
+    var fm = this.fm, self = this;
 
-	this.getstate = function() {
-		return 0;
-	}
+    this.getstate = function () {
+        return 0;
+    }
 
-	this.exec = function() {
+    this.exec = function () {
 
-		var tab = $('#tabs-files li.active a[data-toggle=tab]').attr('href').replace('#', '');
-
-		var selection = codeMirrorArr[tab].doc.getSelection();
-
-		var code = '<a href="">' + selection + '</a>';
-
-		var currentPos = codeMirrorArr[tab].doc.getCursor();
-
-		var to = currentPos.ch;
-
-		currentPos.ch -= selection.length;
-
-		codeMirrorArr[tab].doc.replaceRange(code, currentPos, {
-			line : currentPos.line,
-			ch : to
-		});
-
-		currentPos.ch = currentPos.ch + 9;
-
-		codeMirrorArr[tab].doc.setCursor(currentPos);
-		codeMirrorArr[tab].focus();
-	}
+        var cm = getCodeMirror();
+        var selection = cm.doc.getSelection();
+        var code = '<a href="">' + selection + '</a>';
+        var currentPos = cm.doc.getCursor();
+        var to = currentPos.ch;
+        currentPos.ch -= selection.length;
+        cm.doc.replaceRange(code, currentPos, {
+            line: currentPos.line,
+            ch: to
+        });
+        currentPos.ch = currentPos.ch + 9;
+        cm.doc.setCursor(currentPos);
+        cm.focus();
+    }
 }
