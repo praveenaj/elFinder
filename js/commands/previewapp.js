@@ -14,7 +14,7 @@ elFinder.prototype.commands.previewapp = function() {
 
 	this.exec = function() {
 
-		var url = $('#tabs-files li.active').children('a').next().attr('data-path');
+        var url = $('.tab-pane.active').attr('data-path');
 		window.open('/' + url, '_blank');
 		window.focus();
 	}
