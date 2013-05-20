@@ -26,7 +26,7 @@
 /* common selected background/color */
 .elfinder-cwd-view-icons .elfinder-cwd-file .elfinder-cwd-filename.ui-state-hover,
 .elfinder-cwd table td.ui-state-hover,
-.elfinder-button-menu .ui-state-hover { background: #009F93; color:#fff;}
+.elfinder-button-menu .ui-state-hover { background: #16a085; color:#fff;}
 /* disabled elfinder */
 .elfinder-disabled .elfinder-cwd-view-icons .elfinder-cwd-file .elfinder-cwd-filename.ui-state-hover,
 .elfinder-disabled .elfinder-cwd table td.ui-state-hover { background:#dadada;}
@@ -39,7 +39,7 @@
 .std42-dialog .elfinder-help, .std42-dialog .elfinder-help .ui-widget-content { background:#fff;}
 
 /* contextmenu */
-.elfinder-contextmenu .ui-state-hover { background: #009F93; color:#fff; }
+.elfinder-contextmenu .ui-state-hover { background: #16a085; color:#fff; }
 .elfinder-contextmenu .ui-state-hover .elfinder-contextmenu-arrow { background-image:url('../img/arrows-active.png'); }
 
 
