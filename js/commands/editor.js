@@ -8,8 +8,11 @@
 elFinder.prototype.commands.editor = function() {
 	var fm = this.fm, self = this;
 
-	this.getstate = function() {
-		return 0;
+	this.getstate = function(sel) {
+		var sel = this.files(sel),
+			cnt = sel.length;
+
+		return cnt && $.map(sel, function(f) { return f.phash && f.read ? f : null  }).length == cnt ? 0 : -1;
 	}
 
 	this.exec = function(hashes) {

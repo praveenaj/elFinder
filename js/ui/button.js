@@ -15,9 +15,11 @@ $.fn.elfinderbutton = function(cmd) {
 			btnText = 'Create'
 			break;
 							
+/*
 			case 'publish':
 			btnText = 'Publish';
-			break;
+			break;*/
+
 
 		}
 
