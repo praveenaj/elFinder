@@ -12,7 +12,7 @@ $.fn.elfinderbutton = function(cmd) {
 		// add text to buttons in addition to icons
 		switch(cmd.name){
 			case 'newsite':
-			btnText = 'Create'
+			btnText = 'Create App'
 			break;
 							
 /*
